@@ -1,0 +1,87 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+/driver
+*driver*
+/bin
+/lib
+/target
+target/
+/temp
+/project/project
+/project/target
+test/e2e/screenshots
+/ui/screenshots/
+screenshots/
+node_modules/
+.bundle/
+.sbtserver
+.target
+.idea
+.settings
+.project
+.classpath
+commit.sh
+run.sh
+.DS_Store
+logs/
+gymix.iml
+spomix.iml
+.cache-main
+.tern-project
+*.log
+build/*.js
+/test/jmeter/docs
+/test/jmeter/printable_docs
+/test/jmeter/licenses
+/test/jmeter/extras
+*.sh
+dev.properties
+*dump*
+
+# compiled output
+/dist
+/tmp
+/coverage
+/build
+*.pyc
+
+# dependencies
+/node_modules.bak
+/node_modules
+/bower_components
+/typings
+typings/
+/ts-node
+
+# IDEs and editors
+/.idea
+*.iml
+/.vscode
+.project
+.classpath
+*.launch
+.settings/
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+#System Files
+.DS_Store
+Thumbs.db
+
+npm-debug.log
+
+#
+**/app__
+**/src__
+
+

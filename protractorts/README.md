@@ -1,0 +1,1 @@
+protractor --suite home --grep 'BC01'

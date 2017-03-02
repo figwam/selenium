@@ -1,0 +1,17 @@
+{
+  "name": "wddemo",
+  "version": "1.0.0",
+  "description": "WD Demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexander Schamne",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "colors": "^1.1.2",
+    "wd": "^1.1.3"
+  }
+}
