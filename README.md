@@ -1,2 +1,2 @@
 # selenium
-selenium examples
+selenium Java and Javascript examples
