@@ -3,6 +3,12 @@
 
 /*global jasmine */
 var SpecReporter = require('jasmine-spec-reporter');
+var HtmlScreenshotReporter = require('protractor-jasmine2-screenshot-reporter');
+
+var reporter = new HtmlScreenshotReporter({
+  dest: './screenshots',
+  filename: 'my-report.html'
+});
 
 exports.config = {
     allScriptsTimeout: 11000,
@@ -29,10 +35,20 @@ exports.config = {
         require('ts-node').register({
             project: 'e2e'
         });
-    },
+        return new Promise(function (resolve) {
+            reporter.beforeLaunch(resolve);
+        });
+    }, 
     onPrepare: function () {
         jasmine.getEnv().addReporter(new SpecReporter());
+        jasmine.getEnv().addReporter(reporter);
         browser.ignoreSynchronization = true;  // disable waiting for Angular for non Angular applications
         browser.manage().timeouts().implicitlyWait(5000);
-    }
+    },
+
+  afterLaunch: function (exitCode) {
+    return new Promise(function (resolve) {
+      reporter.afterLaunch(resolve.bind(this, exitCode));
+    });
+  }
 };

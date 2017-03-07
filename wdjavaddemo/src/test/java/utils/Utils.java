@@ -1,8 +1,14 @@
 package utils;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.safari.SafariDriver;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
  * leantrace GmbH
@@ -27,8 +33,24 @@ public class Utils {
                 "/Users/alex/workspace/leantrace/swisscom/selenium-workshop/driver/chromedriver");
         System.setProperty("webdriver.safari.driver",
                 "/usr/bin/safaridriver");
+        System.setProperty("selenium.screenshot.dir",
+                "/Users/alex/workspace/leantrace/swisscom/selenium-workshop/screenshots");
     }
 
     public final static long DEFAULT_WAIT_TIME_OUT_IN_SECONDS = 5;
     public final static WebDriver DEFAULT_DRIVER = new ChromeDriver(); //new ChromeDriver(); //FirefoxDriver();
+
+    public static void takeScreenShot(String fname, WebDriver driver) {
+        try {
+            File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            String imageFileDir = System.getProperty("selenium.screenshot.dir");
+            if (imageFileDir == null) {
+                imageFileDir = System.getProperty("java.io.tmpdir");
+            }
+            FileUtils.copyFile(scrFile, new File(imageFileDir, fname));
+        } catch (IOException e){
+            e.printStackTrace();
+            // ignore
+        }
+    }
 }

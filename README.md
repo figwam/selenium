@@ -1,2 +1,4 @@
 # selenium
-selenium Java and Javascript examples
+``npm install``
+``node app.js``
+

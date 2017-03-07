@@ -27,4 +27,7 @@ public class PageObject {
         this.driver.manage().timeouts().implicitlyWait(Utils.DEFAULT_WAIT_TIME_OUT_IN_SECONDS, TimeUnit.SECONDS);
         PageFactory.initElements(driver, this);
     }
+    public WebDriver getDriver(){
+        return this.driver;
+    }
 }

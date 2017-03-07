@@ -37,6 +37,7 @@ public class HomePageTest {
         SearchResultPage result = homePage.doSearch("iphone 7");
         assertEquals("Apple", result.getProductTitle());
         assertEquals("iPhone 7", result.getProductTeaser());
+        Utils.takeScreenShot("testSimpleSwisscom.png",homePage.getDriver());
     }
 
     @After
